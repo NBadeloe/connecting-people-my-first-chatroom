@@ -1,27 +1,41 @@
-/*
-https://socket.io/get-started/chat
-*/
-const express = require('express')
+/* Losjes gebaseerd op https://socket.io/get-started/chat */
+
+import * as path from 'path'
+
+import { Server } from 'socket.io'
+import { createServer } from 'http'
+import express from 'express'
+
 const app = express()
-const http = require('http').createServer(app)
-const path = require('path')
-const io = require('socket.io')(http)
+const http = createServer(app)
+const ioServer = new Server(http)
 const port = process.env.PORT || 4242
 
+// Serveer client-side bestanden
 app.use(express.static(path.resolve('public')))
 
-io.on('connection', (socket) => {
-  console.log('a user connected')
+// Start de socket.io server op
+ioServer.on('connection', (client) => {
+  // Log de connectie naar console
+  console.log(`user ${client.id} connected`)
 
-  socket.on('message', (message) => {
-    io.emit('message', message)
+  // Luister naar een message van een gebruiker
+  client.on('message', (message) => {
+    // Log het ontvangen bericht
+    console.log(`user ${client.id} sent message: ${message}`)
+
+    // Verstuur het bericht naar alle clients
+    ioServer.emit('message', message)
   })
 
-  socket.on('disconnect', () => {
-    console.log('user disconnected')
+  // Luister naar een disconnect van een gebruiker
+  client.on('disconnect', () => {
+    // Log de disconnect
+    console.log(`user ${client.id} disconnected`)
   })
 })
 
+// Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {
-  console.log('listening on port ', port)
+  console.log('listening on http://localhost:' + port)
 })
