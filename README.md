@@ -1,8 +1,6 @@
-# barebonechat
+# plantswap chatroom
 
-# Titel
-
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+Dit is een demo waar in ik heb gespeeld met de plantswap huisstijl en socket.io.
 
 ## Inhoudsopgave
 
@@ -14,24 +12,33 @@
 - [Licentie](#licentie)
 
 ## Beschrijving
+Met behulp van een demo heb ik een simpele chatroom gemaakt waar meerdere gebruikers kunnen chatten in dezelfde chatroom. Dit is gestijld op basis van de Plantswap huisstijl, maar met een speelse twist.
+![image](https://github.com/NBadeloe/connecting-people-my-first-chatroom/assets/48018083/e0f16acc-32e6-4912-a727-3db82528a440)
 
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+voor het ontwerp heb ik een snelle schets in elkaar gezet:
+![image](https://github.com/NBadeloe/connecting-people-my-first-chatroom/assets/48018083/593e6028-378f-4a39-a6fc-a38b90d89aea)
+
 
 ## Gebruik
-
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+om de webstie lokaal te gebruiken voer je de volgende command uit in de terminal:
+``` node server.js ```
 
 ## Kenmerken
 
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+Voor dit project heb ik de volgende technieken gebruikt:
+-node.js
+-socket.io
+-html/css
+-npm
+-adaptable
 
 ## Installatie
-
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+clone de repo en voer de volgende command uit in je terminal:
+``` npm install ```
 
 ## Bronnen
+[socket.io documentatie](https://socket.io/docs/v4/)
+
 
 ## Licentie
 
